@@ -47,7 +47,7 @@ const BOOKS = [
     featured: true,
     promoted: true,
     cover: "https://covers.openlibrary.org/b/isbn/9798272006370-L.jpg",
-    synopsis: "A high-stakes investigation with decisive pacing and a bold mission at the center.",
+    synopsis: "A British spy thriller of terrorism and psychological warfare, where loyalty and truth blur and every move can cost lives.",
     pressQuotes: [],
     trailer: "https://youtu.be/58PgTjwxWY0",
     buyLinks: [
@@ -63,7 +63,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1639374663-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A focused, introductory grammar guide that trims the fluff and highlights what's most useful, built as a springboard for deeper study so you can learn faster.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -79,7 +79,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1973833204-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Abandoned by his father and raised by a fiercely determined mother, Amos grows up in a New Hampshire farming community and pushes toward the calling he believes he was born for.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -89,13 +89,13 @@ const BOOKS = [
   {
     id: "9798893412123",
     title: "The Second World War as Experienced by a British Schoolboy",
-    author: "Dr. Douglas M. Gebbie",
+    author: "Douglas M. Gebbie",
     genre: "History",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/9798893412123-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A WWII memoir seen through a schoolboy's eyes, following Douglas and his family in Yorkshire as rationing, shortages, and air raids reshape everyday life.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -105,13 +105,13 @@ const BOOKS = [
   {
     id: "9798887290683",
     title: "The Adventures of Morag and Willow",
-    author: "Dr. Douglas M. Gebbie",
+    author: "Douglas M. Gebbie",
     genre: "Children's",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/9798887290683-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Two dogs with very different pasts share their stories, observe human quirks, and stumble into adventures that quietly teach big lessons about life and friendship.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -121,13 +121,13 @@ const BOOKS = [
   {
     id: "9798890278111",
     title: "More Adventures of Morag and Willow",
-    author: "Dr. Douglas M. Gebbie",
+    author: "Douglas M. Gebbie",
     genre: "Children's",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/9798890278111-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Morag and Willow return for more talking-dog mischief and heartfelt lessons, deepening their bond as they navigate the oddities of the human world.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -143,7 +143,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1957208384-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A reflective Christian guide on the power of thoughts, inviting readers to examine the mind, confront temptation, and pursue a heavenly mindset that shapes everyday living.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -159,7 +159,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1973675757-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A discipleship-focused walk through spiritual growth after salvation, urging believers to build integrity through sanctifying grace and practical, faith-forward living.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -170,12 +170,12 @@ const BOOKS = [
     id: "1639373756",
     title: "She Could Be You",
     author: "Margaret Joeline Brinson",
-    genre: "Fiction",
+    genre: "Poetry",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1639373756-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A poetry collection that turns everyday emotions into verse, touching on love, injustice, resilience, mortality, and the human hunger for peace and belonging.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -191,7 +191,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1546215107-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A children's story about Little A, a curious dreamer whose imagination and real-world challenges push him to learn, grow, and keep hoping.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -207,7 +207,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1647536634-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Little A faces new tests and lessons as he navigates tough situations and relationships, another chapter in a series built around courage, choices, and growing up.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -223,7 +223,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1546268103-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Little A's world expands through family and guidance, mixing kid-friendly adventure with lessons about character, respect, and doing the right thing.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -239,7 +239,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1684862434-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A heartfelt story centered on a boy's plea to be seen and protected, balancing pain and hope while spotlighting the realities kids can face.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -255,7 +255,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1962142221-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A crime thriller where a brutal killer leaves a signature calling card, pulling investigators into a tense chase through clues, suspects, and escalating danger.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -271,7 +271,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1546273360-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "In the year 2241, advanced satellites uncover a mysterious outpost on the Moon, triggering a high-stakes mission as the future of Earth hangs in the balance.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -282,12 +282,12 @@ const BOOKS = [
     id: "1665592303",
     title: "Vlad: The Dark Prince",
     author: "Colin Martin",
-    genre: "Fantasy",
+    genre: "Historical Fiction",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1665592303-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A historical narrative that revisits Vlad III's violent era in Wallachia, framing the Dark Prince as a complex figure shaped by war, power, and survival.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -303,7 +303,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1475956932-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A hard-hitting, personal look at Marine life and the cost of service, built from lived experience, dark humor, and the mindset that keeps people moving forward.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -314,12 +314,12 @@ const BOOKS = [
     id: "1982215054",
     title: "Freda and Todd Find Each Other",
     author: "Dr. Clare Z",
-    genre: "Children's",
+    genre: "Romance",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1982215054-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A tender, fate-tinged romance about two souls drawn together, blending love, mystery, and the question of whether some connections are meant to return.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -330,12 +330,12 @@ const BOOKS = [
     id: "1664233458",
     title: "Rooted by the Water",
     author: "Shannon Kenley Hinson",
-    genre: "Poetry",
+    genre: "Faith",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1664233458-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A faith-centered story of being planted, tested, and renewed, using the imagery of water and roots to explore resilience, hope, and spiritual growth.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -351,7 +351,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1477118748-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A whimsical children's adventure that invites young readers into the Inkey Pinkey Forest, where imagination leads the way and surprises wait in the trees.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -367,7 +367,7 @@ const BOOKS = [
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1728380200-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Bite-sized poems meant to be savored, mixing sweetness and bite as they reflect on love, struggle, memory, and everyday moments.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -378,12 +378,12 @@ const BOOKS = [
     id: "1742845401",
     title: "Cockabloodytoo",
     author: "Jay Arbee",
-    genre: "Fiction",
+    genre: "Thriller",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1742845401-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A fast, cheeky thriller that follows an Australian protagonist into a dangerous tangle of crime and chaos, equal parts grit, humor, and momentum.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -394,12 +394,12 @@ const BOOKS = [
     id: "1736763857",
     title: "Can't See Around Corners",
     author: "Josie Townsend",
-    genre: "Fiction",
+    genre: "Thriller",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1736763857-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A suspense-driven novel about how one decision can ripple into the next, keeping tension high as secrets, consequences, and uncertainty close in.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -408,14 +408,14 @@ const BOOKS = [
   },
   {
     id: "0968497608",
-    title: "Broken Wings",
-    author: "Nattanya Andersen",
+    title: "Broken Wings: A Flight Attendant's Journey",
+    author: "H. Nattanya Andersen",
     genre: "Memoir",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/0968497608-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "After surviving an in-flight engine explosion, a senior flight attendant battles PTSD and corporate denial, then pulls back the curtain on hidden health hazards of modern air travel.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -425,13 +425,13 @@ const BOOKS = [
   {
     id: "0968497659",
     title: "The Post Traumatic Stress Disorder Fallacy",
-    author: "Nattanya Andersen",
+    author: "H. Nattanya Andersen",
     genre: "Nonfiction",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/0968497659-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A provocative, research-driven memoir and critique that argues PTSD treatment can be harmful, grounded in the author's survival story and her fight to reclaim sanity and agency.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -440,14 +440,14 @@ const BOOKS = [
   },
   {
     id: "0968497675",
-    title: "Serving Evil",
-    author: "Nattanya Andersen",
+    title: "Serving Evil: The PTSD & ADHD Fallacy (Book 2)",
+    author: "H. Nattanya Andersen",
     genre: "Nonfiction",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/0968497675-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Book two of the series, a personal and researched deep dive into PTSD, describing institutional pressure, survival, and the risks of blind trust in systems that claim to help.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -456,14 +456,14 @@ const BOOKS = [
   },
   {
     id: "9798998658228",
-    title: "It's All Connected",
-    author: "Boots / Zakrajsek",
-    genre: "Business",
+    title: "It's All Connected: An Interactive Leadership and Healing Journey Through the Chakras",
+    author: "Jessica Boots / Jenna Zakrajsek",
+    genre: "Leadership",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/9798998658228-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "Part story, part journal, part leadership and wellness guide, an interactive journey through the seven chakras with reflection prompts and practices to help you lead from a more grounded self.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
@@ -471,19 +471,83 @@ const BOOKS = [
     ]
   },
   {
+    id: "0646846043",
+    title: "It's All Connected",
+    author: "Missee Nelligan / Marija Hall",
+    genre: "Motivation",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/0646846043-L.jpg",
+    synopsis: "A compilation described as three books in one, gathering uplifting, motivational pieces including titles like You Are Your Happiness, Smile For You, and Don't Stop.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Its-All-Connected-Missee-Nelligan/dp/0646846043" }
+    ]
+  },
+  {
+    id: "0971100543",
+    title: "It's All Connected: A Comprehensive Guide to Global Issues and Sustainable Solutions",
+    author: "Benjamin & Gilda Wheeler / Wendy Church",
+    genre: "Education",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/0971100543-L.jpg",
+    synopsis: "An educational introduction to major global challenges, linking issues like population, food and water, and energy to practical, sustainability-minded solutions.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Its-All-Connected-Comprehensive-Sustainable/dp/0971100543" }
+    ]
+  },
+  {
     id: "1984559974",
-    title: "Five Things I've Learned About Working in Nursing",
+    title: "Five Things I've Learned About Life from Working in a Nursing Home",
     author: "Ana Lydia Peeks",
     genre: "Nonfiction",
     tags: [],
     featured: false,
     promoted: false,
     cover: "https://covers.openlibrary.org/b/isbn/1984559974-L.jpg",
-    synopsis: "Client title showcased in our portfolio.",
+    synopsis: "A reflective, non-clinical look at aging, structured as five jewels drawn from nursing-home work with metaphors and questions meant to spark personal insight.",
     pressQuotes: [],
     trailer: "",
     buyLinks: [
       { label: "Buy on Amazon", url: "https://www.amazon.com/Things-Learned-About-Working-Nursing/dp/1984559974" }
+    ]
+  },
+  {
+    id: "1796070211",
+    title: "Traveling With Words: Off the Familiar Path: the End of a Journey",
+    author: "Ana Lydia Peeks",
+    genre: "Nonfiction",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1796070211-L.jpg",
+    synopsis: "A travel-and-reflection narrative that uses places and language as mirrors, capturing what changes when you step off the familiar path.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Traveling-Words-Familiar-Path-Journey/dp/1796070211" }
+    ]
+  },
+  {
+    id: "1796027936",
+    title: "Kenji and Ice Cream Are on the Move!",
+    author: "Ana Lydia Peeks",
+    genre: "Children's",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1796027936-L.jpg",
+    synopsis: "A lively children's tale that follows Kenji and ice cream on the go, celebrating curiosity, movement, and small adventures with big smiles.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Kenji-Ice-Cream-Move-Extraordinary/dp/1796027936" }
     ]
   }
 ];
@@ -507,6 +571,9 @@ const el = {
   tagRow: byId("tagRow"),
   bookGrid: byId("bookGrid"),
   resultsCount: byId("resultsCount"),
+  booksPrev: byId("booksPrev"),
+  booksNext: byId("booksNext"),
+  booksSection: byId("books"),
   bookModal: byId("bookModal"),
   modalCover: byId("modalCover"),
   modalTitle: byId("modalTitle"),
@@ -523,6 +590,12 @@ const el = {
 
 function unique(arr){
   return [...new Set(arr)];
+}
+
+function scrollToBooks(){
+  if (el.booksSection){
+    el.booksSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function getGenres(){
@@ -570,7 +643,7 @@ function renderTags(){
     btn.textContent = tag;
     btn.addEventListener("click", () => {
       state.tag = tag;
-      render();
+      render(true);
     });
     el.tagRow.appendChild(btn);
   });
@@ -598,12 +671,14 @@ function renderFeatured(){
   });
 }
 
-function renderBooks(){
+function renderBooks(shouldScroll = false){
   const list = filteredBooks();
-  el.bookGrid.innerHTML = "";
-  el.resultsCount.textContent = `${list.length} result${list.length === 1 ? "" : "s"}`;
+  const total = list.length;
 
-  if (!list.length){
+  el.bookGrid.innerHTML = "";
+  el.resultsCount.textContent = `${total} result${total === 1 ? "" : "s"}`;
+
+  if (!total){
     const empty = document.createElement("div");
     empty.className = "card";
     empty.innerHTML = `<p class="muted">No matches. Try a different search or genre.</p>`;
@@ -632,6 +707,11 @@ function renderBooks(){
     `;
     el.bookGrid.appendChild(card);
   });
+
+  if (shouldScroll) {
+    scrollToBooks();
+    el.bookGrid.scrollTo({ left: 0, behavior: "smooth" });
+  }
 }
 
 function openBookModal(book){
@@ -690,9 +770,9 @@ function bindModal(modal){
   });
 }
 
-function render(){
+function render(shouldScroll = false){
   renderTags();
-  renderBooks();
+  renderBooks(shouldScroll);
 }
 
 function wire(){
@@ -702,13 +782,23 @@ function wire(){
 
   el.searchInput.addEventListener("input", () => {
     state.search = el.searchInput.value.trim().toLowerCase();
-    renderBooks();
+    renderBooks(true);
   });
 
   el.genreSelect.addEventListener("change", () => {
     state.genre = el.genreSelect.value;
-    renderBooks();
+    renderBooks(true);
   });
+
+  if (el.booksPrev && el.booksNext){
+    const scrollByAmount = () => Math.max(280, Math.floor(el.bookGrid.clientWidth * 0.8));
+    el.booksPrev.addEventListener("click", () => {
+      el.bookGrid.scrollBy({ left: -scrollByAmount(), behavior: "smooth" });
+    });
+    el.booksNext.addEventListener("click", () => {
+      el.bookGrid.scrollBy({ left: scrollByAmount(), behavior: "smooth" });
+    });
+  }
 
   document.body.addEventListener("click", (event) => {
     const button = event.target.closest("[data-open-book]");

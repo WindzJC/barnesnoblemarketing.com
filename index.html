@@ -116,10 +116,16 @@
         <div class="section__head">
           <div>
             <p class="eyebrow">Books</p>
-            <h2>Client book grid</h2>
+            <h2>Client book carousel</h2>
             <p class="muted">Filter by genre, new, bestseller, or promoted placement.</p>
           </div>
-          <div class="results" id="resultsCount">0 results</div>
+          <div class="books__actions">
+            <div class="results" id="resultsCount">0 results</div>
+            <div class="carousel__controls">
+              <button class="btn btn--ghost" type="button" id="booksPrev">Prev</button>
+              <button class="btn btn--ghost" type="button" id="booksNext">Next</button>
+            </div>
+          </div>
         </div>
 
         <div class="filters">
@@ -137,7 +143,9 @@
           </div>
         </div>
 
-        <div class="grid" id="bookGrid" aria-live="polite"></div>
+        <div class="carousel book-carousel">
+          <div class="carousel__track book-track" id="bookGrid" aria-live="polite"></div>
+        </div>
       </div>
     </section>
 
