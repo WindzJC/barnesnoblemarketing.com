@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JC Books PH — Browse Books</title>
+  <meta name="description" content="Browse books by category, filter by price/format, and quick add to cart. Built for a Philippines bookstore." />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true">JB</div>
+        <div class="brand__text">
+          <div class="brand__name">JC Books PH</div>
+          <div class="brand__tag">Browse • Discover • Quick Add</div>
+        </div>
+      </div>
+
+      <div class="search">
+        <label class="sr" for="q">Search books</label>
+        <input id="q" type="search" placeholder="Search title, author, ISBN…" autocomplete="off" />
+        <button id="clearSearch" class="btn btn--ghost" type="button" title="Clear search">Clear</button>
+      </div>
+
+      <div class="actions">
+        <button id="filtersBtn" class="btn btn--ghost" type="button">Filters</button>
+
+        <button id="cartBtn" class="btn btn--solid" type="button" aria-haspopup="dialog" aria-controls="cartDrawer">
+          Cart <span id="cartCount" class="pill">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="subbar">
+    <div class="wrap subbar__inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="#" class="crumb">Home</a>
+        <span class="crumb__sep" aria-hidden="true">/</span>
+        <span class="crumb crumb--current">Books</span>
+      </nav>
+
+      <div class="subbar__right">
+        <div class="sort">
+          <label for="sort" class="sort__label">Sort</label>
+          <select id="sort">
+            <option value="popular">Most Popular</option>
+            <option value="newest">Newest</option>
+            <option value="priceAsc">Price: Low to High</option>
+            <option value="priceDesc">Price: High to Low</option>
+            <option value="titleAsc">Title: A → Z</option>
+          </select>
+        </div>
+
+        <div class="meta" id="resultsMeta" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap layout">
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar" aria-label="Browse & filters">
+      <section class="panel">
+        <div class="panel__head">
+          <h2 class="panel__title">Browse</h2>
+        </div>
+
+        <div class="panel__body">
+          <div class="chiprow" id="quickChips"></div>
+
+          <div class="divider"></div>
+
+          <h3 class="panel__subtitle">Categories</h3>
+          <ul id="categories" class="cats" aria-label="Categories"></ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel__head">
+          <h2 class="panel__title">Filters</h2>
+          <button id="resetBtn" class="btn btn--ghost btn--sm" type="button">Reset</button>
+        </div>
+
+        <div class="panel__body">
+          <div class="field">
+            <label class="field__label">Availability</label>
+            <label class="check">
+              <input id="inStockOnly" type="checkbox" />
+              <span>In stock only</span>
+            </label>
+          </div>
+
+          <div class="field">
+            <label class="field__label">Format</label>
+            <div class="seg" role="group" aria-label="Format">
+              <button class="seg__btn is-on" data-format="all" type="button">All</button>
+              <button class="seg__btn" data-format="Paperback" type="button">Paperback</button>
+              <button class="seg__btn" data-format="Hardcover" type="button">Hardcover</button>
+              <button class="seg__btn" data-format="Manga" type="button">Manga</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label">Language</label>
+            <select id="language">
+              <option value="all">All</option>
+              <option value="English">English</option>
+              <option value="Filipino">Filipino</option>
+              <option value="Japanese">Japanese</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="field__label">Price (₱)</label>
+            <div class="range">
+              <div class="range__row">
+                <input id="minPrice" inputmode="numeric" placeholder="Min" />
+                <span class="range__sep">—</span>
+                <input id="maxPrice" inputmode="numeric" placeholder="Max" />
+              </div>
+              <button id="applyPrice" class="btn btn--ghost btn--sm" type="button">Apply</button>
+            </div>
+          </div>
+
+          <div class="note">
+            Tip: edit book data inside <span class="mono">script.js</span> → <span class="mono">BOOKS</span>.
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- MAIN -->
+    <main id="main" class="main">
+      <section class="hero">
+        <div class="hero__copy">
+          <h1>Books</h1>
+          <p>Browse by category, filter fast, and <span class="strong">Quick Add</span> to cart. Clean, “big bookstore” energy—minus the chaos.</p>
+        </div>
+        <div class="hero__stat">
+          <div class="stat">
+            <div class="stat__k" id="statTitles">—</div>
+            <div class="stat__l">titles</div>
+          </div>
+          <div class="stat">
+            <div class="stat__k" id="statInStock">—</div>
+            <div class="stat__l">in stock</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gridhead">
+        <h2 class="sr">Results</h2>
+        <div class="gridhead__left">
+          <div class="activefilters" id="activeFilters" aria-live="polite"></div>
+        </div>
+        <div class="gridhead__right">
+          <button id="viewCompact" class="btn btn--ghost btn--sm" type="button">Compact</button>
+          <button id="viewComfort" class="btn btn--ghost btn--sm" type="button">Comfort</button>
+        </div>
+      </section>
+
+      <section>
+        <div id="grid" class="grid" aria-live="polite"></div>
+
+        <div class="pager" aria-label="Pagination">
+          <button id="prevPage" class="btn btn--ghost" type="button">← Prev</button>
+          <div class="pager__mid">
+            <span class="mono" id="pageInfo">Page 1</span>
+          </div>
+          <button id="nextPage" class="btn btn--ghost" type="button">Next →</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="cartDrawer" class="drawer" role="dialog" aria-modal="true" aria-label="Cart" hidden>
+    <div class="drawer__head">
+      <div>
+        <div class="drawer__title">Your Cart</div>
+        <div class="drawer__sub" id="cartSub">—</div>
+      </div>
+      <button id="closeCart" class="btn btn--ghost" type="button">Close</button>
+    </div>
+
+    <div class="drawer__body">
+      <div id="cartItems" class="cart"></div>
+    </div>
+
+    <div class="drawer__foot">
+      <div class="totals">
+        <div class="totals__row">
+          <span>Subtotal</span>
+          <span class="mono" id="cartSubtotal">₱0</span>
+        </div>
+        <div class="totals__row totals__row--muted">
+          <span>Shipping</span>
+          <span class="mono">Calculated at checkout</span>
+        </div>
+      </div>
+
+      <button id="checkoutBtn" class="btn btn--solid btn--full" type="button">Checkout (demo)</button>
+      <button id="clearCart" class="btn btn--ghost btn--full" type="button">Clear cart</button>
+
+      <p class="tiny">Demo checkout: wire this to Shopify/WooCommerce/PayMongo later.</p>
+    </div>
+  </aside>
+
+  <!-- MOBILE FILTER SHEET -->
+  <aside id="filterSheet" class="sheet" role="dialog" aria-modal="true" aria-label="Filters" hidden>
+    <div class="sheet__head">
+      <div class="sheet__title">Filters</div>
+      <button id="closeFilters" class="btn btn--ghost" type="button">Done</button>
+    </div>
+    <div class="sheet__body" id="filterSheetBody">
+      <!-- JS clones sidebar panels in here for mobile -->
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
