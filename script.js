@@ -658,7 +658,7 @@ function renderFeatured(){
     card.className = "card";
     card.innerHTML = `
       <div class="card__media">
-        <img src="${book.cover}" alt="${book.title} cover" loading="lazy" />
+        <img src="${book.cover}" alt="${book.title} cover" loading="eager" referrerpolicy="no-referrer" />
       </div>
       <div class="card__meta">${book.genre} • ${book.author}</div>
       <h3>${book.title}</h3>
@@ -694,7 +694,7 @@ function renderBooks(shouldScroll = false){
 
     card.innerHTML = `
       <div class="card__media">
-        <img src="${book.cover}" alt="${book.title} cover" loading="lazy" />
+        <img src="${book.cover}" alt="${book.title} cover" loading="eager" referrerpolicy="no-referrer" />
       </div>
       <div class="card__meta">${book.author} • ${book.genre}</div>
       <h3>${book.title}</h3>
@@ -717,6 +717,7 @@ function renderBooks(shouldScroll = false){
 function openBookModal(book){
   el.modalCover.src = book.cover;
   el.modalCover.alt = `${book.title} cover`;
+  el.modalCover.referrerPolicy = "no-referrer";
   el.modalTag.textContent = book.promoted ? "Promoted" : (book.tags?.[0] || "Featured");
   el.modalTitle.textContent = book.title;
   el.modalMeta.textContent = `${book.author} • ${book.genre} • ${book.id}`;
