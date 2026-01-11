@@ -34,7 +34,7 @@
       </nav>
 
       <div class="topbar__cta">
-        <button class="btn btn--ghost" type="button" id="loginBtn">Client Login</button>
+        <a class="btn btn--ghost" href="#newsletter">Newsletter</a>
         <a class="btn btn--solid" href="#submit">Submit a Book</a>
       </div>
     </div>
@@ -461,10 +461,10 @@
             <h3>Client review portal</h3>
             <p class="muted">Manage submissions, invoices, and review placements in one place.</p>
           </div>
-          <div class="review-cta__actions">
-            <button class="btn btn--ghost" type="button" id="loginBtnAlt">Client Login</button>
-            <a class="btn btn--solid" href="#submit">Start a review request</a>
-          </div>
+        <div class="review-cta__actions">
+          <a class="btn btn--ghost" href="#submit">Start a review request</a>
+          <a class="btn btn--solid" href="#books">Browse client books</a>
+        </div>
         </div>
       </div>
     </section>
@@ -505,7 +505,7 @@
           </article>
         </div>
 
-        <div class="newsletter">
+        <div class="newsletter" id="newsletter">
           <div>
             <h3>Newsletter</h3>
             <p class="muted">Get the latest launch playbooks and case studies.</p>
@@ -554,8 +554,8 @@
             <a href="mailto:hello@barnesnoblemarketing.com">hello@barnesnoblemarketing.com</a>
           </div>
           <div>
-            <span class="contact__label">Client Portal</span>
-            <button class="btn btn--ghost" type="button" id="loginBtnContact">Login</button>
+            <span class="contact__label">Next step</span>
+            <a class="btn btn--ghost" href="#submit">Submit your book</a>
           </div>
           <div>
             <span class="contact__label">Location</span>
@@ -600,27 +600,6 @@
           <a id="modalTrailer" class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Watch trailer</a>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="modal" id="loginModal" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__card modal__card--small">
-      <button class="modal__close" type="button" data-close aria-label="Close">×</button>
-      <h3>Client Login</h3>
-      <p class="muted">Access review requests, invoices, and campaign updates.</p>
-      <form id="loginForm" class="form">
-        <label class="field">
-          <span class="field__label">Email</span>
-          <input type="email" id="loginEmail" required />
-        </label>
-        <label class="field">
-          <span class="field__label">Password</span>
-          <input type="password" id="loginPassword" required />
-        </label>
-        <button class="btn btn--solid" type="submit">Sign in</button>
-        <p class="form__note" id="loginNote" role="status"></p>
-      </form>
     </div>
   </div>
 

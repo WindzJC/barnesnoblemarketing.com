@@ -17,7 +17,7 @@ const BOOKS = [
     trailer: "https://youtu.be/YJNUH5L8cFc",
     buyLinks: [
       { label: "Buy on Amazon", url: "https://www.amazon.in/Kovalenko-Secret-Philip-L-Rettew/dp/B0C5FMV2DX" },
-      { label: "Press release", url: "https://www.prleap.com/pr/290728/south-burlington-vt-author-publishes-suspense-novel" }
+      { label: "Press release", url: "https://www.prleap.com/pr/290728/south-burlington-vt-author-publishes-suspense-novel?utm_source=chatgpt.com" }
     ]
   },
   {
@@ -35,204 +35,456 @@ const BOOKS = [
     ],
     trailer: "https://youtu.be/yfPIYXm5JDw",
     buyLinks: [
-      { label: "Buy on Amazon", url: "https://www.amazon.com/Positive-Psychology-Coaching-Introducing-Solutions-ebook/dp/B07MNZ4NZG" }
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Positive-Psychology-Coaching-Introducing-Solutions-ebook/dp/B07MNZ4NZG?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9._w2JkYpRBfMTn6a9phHZleeVECuqVUY-KOWhwHgaYc9FHIayoAvkuyUm8j2QTXJo.ewByjQOQogP-e1H_EWix-3MamzHg1XynzzafPZIRhno&dib_tag=AUTHOR" }
     ]
   },
   {
-    id: "okon-attah-grammar",
-    title: "English Grammar: Learning At Lightning Speed",
-    author: "Okon Attah",
-    genre: "Education",
-    tags: ["Promoted"],
+    id: "B0FYHXSMXD",
+    title: "KING'S BUREAU OF INVESTIGATION: Homeland Security Force",
+    author: "Geoffrey O'Farrell",
+    genre: "Thriller",
+    tags: ["New"],
     featured: true,
     promoted: true,
-    cover: "https://bookstore.dorrancepublishing.com/cdn/shop/products/AttahO_front_cover__25433.1649850186.1280.1280_160x.jpg?v=1708989158",
+    cover: "https://covers.openlibrary.org/b/isbn/9798272006370-L.jpg",
+    synopsis: "A high-stakes investigation with decisive pacing and a bold mission at the center.",
+    pressQuotes: [],
+    trailer: "https://youtu.be/58PgTjwxWY0",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Kings-Bureau-Investigation-Homeland-Security/dp/B0FYHXSMXD" }
+    ]
+  },
+  {
+    id: "1639374663",
+    title: "English Grammar: Learning at Lightning Speed",
+    author: "Okon Attah",
+    genre: "Education",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1639374663-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/English-Grammar-Learning-Lightning-Speed/dp/1639374663" }
+    ]
   },
   {
-    id: "amos-the-gifted",
+    id: "1973833204",
     title: "Amos The Gifted",
     author: "Wilbur Shapiro",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://m.media-amazon.com/images/I/417J5meR3IL._SY445_SX342_.jpg",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1973833204-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/-/es/Amos-Gifted-Mr-Wilbur-Shapiro/dp/1973833204" }
+    ]
   },
   {
-    id: "second-world-war-schoolboy",
+    id: "9798893412123",
     title: "The Second World War as Experienced by a British Schoolboy",
     author: "Dr. Douglas M. Gebbie",
     genre: "History",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://bookstore.dorrancepublishing.com/cdn/shop/files/thesecondworldwarasexperience_160x.jpg?v=1725052279",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/9798893412123-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/-/zh_TW/Douglas-M-Gebbie/dp/B0DJTZ6JJG" }
+    ]
   },
   {
-    id: "morag-and-willow",
-    title: "The Adventures Of Morag And Willow",
+    id: "9798887290683",
+    title: "The Adventures of Morag and Willow",
     author: "Dr. Douglas M. Gebbie",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://bookstore.dorrancepublishing.com/cdn/shop/products/theadventuresofmorageandwillow__36038.1684253117.1280.1280_160x.jpg?v=1709009587",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/9798887290683-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Adventures-Morag-Willow-Douglas-Gebbie/dp/B0C1MKQ5GS" }
+    ]
   },
   {
-    id: "more-morag-and-willow",
-    title: "More Adventures Of Morag And Willow",
+    id: "9798890278111",
+    title: "More Adventures of Morag and Willow",
     author: "Dr. Douglas M. Gebbie",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://bookstore.dorrancepublishing.com/cdn/shop/products/moreadventuresofmoragandwillow__86793.1706045278.1280.1280_160x.jpg?v=1709021783",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/9798890278111-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.it/More-Adventures-Morag-Willow-English-ebook/dp/B0CVLC4CGP" }
+    ]
   },
   {
-    id: "she-could-be-you",
+    id: "1957208384",
+    title: "Think About These Things: The Heavenly Mind",
+    author: "Tom Kingery",
+    genre: "Faith",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1957208384-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Think-about-These-Things-Heavenly/dp/1957208384" }
+    ]
+  },
+  {
+    id: "1973675757",
+    title: "Supplement Your Faith: A Pathway to Integrity",
+    author: "Tom Kingery",
+    genre: "Faith",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1973675757-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Supplement-Your-Faith-Pathway-Integrity/dp/1973675757" }
+    ]
+  },
+  {
+    id: "1639373756",
     title: "She Could Be You",
     author: "Margaret Joeline Brinson",
     genre: "Fiction",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://bookstore.dorrancepublishing.com/cdn/shop/products/brinson_front__31196.1657127107.1280.1280_160x.jpg?v=1708993116",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1639373756-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/She-Could-Margaret-Joeline-Brinson/dp/1639373756" }
+    ]
   },
   {
-    id: "cockabloodytoo",
-    title: "Cockabloodytoo",
-    author: "Jay Arbee",
-    genre: "Fiction",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://books.google.com.sg/books/publisher/content?id=BG0mDQAAQBAJ&img=1&imgtk=AFLRE71pVwfCZXoirNfVFelbYL2NNUKQ-itL5F0nGBTkfIEbO8wHrU5i6LQAgz_8EvAzLJ6AMqrXHM5ldy0OdIOOhLNI_pJbWoPeqi6XXuD_dWLj9tXqxRKMob3rQwI8h8TOrX_rwIdW&printsec=frontcover&zoom=1",
-    synopsis: "Client title showcased in our portfolio.",
-    pressQuotes: [],
-    trailer: "",
-    buyLinks: []
-  },
-  {
-    id: "little-a-dreamer",
+    id: "1546215107",
     title: "Little A: The Dreamer",
     author: "John Chipley",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://images2.medimops.eu/product/c623ad/M01546215107-large.jpg",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1546215107-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Little-Dreamer-John-Chipley/dp/1546215107" }
+    ]
   },
   {
-    id: "little-a-womack",
+    id: "1647536634",
     title: "Little A and the Womack",
     author: "John Chipley",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://images2.medimops.eu/product/84efe5/M01647536634-large.jpg",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1647536634-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Little-Womack-John-Chipley/dp/1647536634" }
+    ]
   },
   {
-    id: "little-a-uncle-thomas",
+    id: "1546268103",
     title: "Little A and Uncle Thomas",
     author: "John Chipley",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://images2.medimops.eu/product/4d0688/M0154626809X-large.jpg",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1546268103-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Little-Uncle-Thomas-John-Chipley/dp/1546268103" }
+    ]
   },
   {
-    id: "little-a-please-talk",
-    title: "Little A, Please, We have to talk! An African American Boy's Cry",
+    id: "1684862434",
+    title: "Little A and Please, Help Me: An African American Boy's Cry",
     author: "John Chipley",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://m.media-amazon.com/images/I/91QmGT-Y4KL._SL1500_.jpg",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1684862434-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Little-Please-Help-Me-American/dp/1684862434" }
+    ]
   },
   {
-    id: "vlad-dark-prince",
-    title: "Vlad: the Dark Prince",
+    id: "1962142221",
+    title: "The Pearl Drop Killer",
+    author: "Joshua Quentin Hawk",
+    genre: "Mystery & Thriller",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1962142221-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Pearl-Drop-Joshua-Quentin-Hawk/dp/1962142221" }
+    ]
+  },
+  {
+    id: "1546273360",
+    title: "The Lost Outpost",
+    author: "Joshua Quentin Hawk",
+    genre: "Science Fiction",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1546273360-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Lost-Outpost-JOSHUA-QUENTIN-HAWK/dp/1546273360" }
+    ]
+  },
+  {
+    id: "1665592303",
+    title: "Vlad: The Dark Prince",
     author: "Colin Martin",
     genre: "Fantasy",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://colinmartinbooks.wordpress.com/wp-content/uploads/2022/08/vtdp_book_cover.jpg?w=640",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1665592303-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Vlad-Dark-Prince-Colin-Martin/dp/1665592303" }
+    ]
   },
   {
-    id: "well-all-die-marines",
+    id: "1475956932",
     title: "We'll All Die as Marines",
     author: "Jim Bathurst",
     genre: "Memoir",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://i0.wp.com/wellalldieasmarines.net/wp-content/uploads/2021/09/Front-page-001-1-1-scaled.jpg?resize=212%2C315&ssl=1",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1475956932-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Well-All-Die-Marines-Journey/dp/1475956932" }
+    ]
   },
   {
-    id: "freda-and-todd",
+    id: "1982215054",
     title: "Freda and Todd Find Each Other",
     author: "Dr. Clare Z",
     genre: "Children's",
-    tags: ["Promoted"],
-    featured: true,
-    promoted: true,
-    cover: "https://images2.medimops.eu/product/7b9e66/M01982215054-large.jpg",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1982215054-L.jpg",
     synopsis: "Client title showcased in our portfolio.",
     pressQuotes: [],
     trailer: "",
-    buyLinks: []
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Freda-Todd-Find-Each-Other/dp/1982215054" }
+    ]
+  },
+  {
+    id: "1664233458",
+    title: "Rooted by the Water",
+    author: "Shannon Kenley Hinson",
+    genre: "Poetry",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1664233458-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Rooted-Water-Shannon-Kenley-Hinson/dp/1664233458" }
+    ]
+  },
+  {
+    id: "1477118748",
+    title: "The Tale of Inkey Pinkey Forest",
+    author: "Helen Ridling",
+    genre: "Children's",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1477118748-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Tale-Inkey-Pinkey-Forest/dp/1477118748" }
+    ]
+  },
+  {
+    id: "1728380200",
+    title: "Chocolate Verselets: Poems",
+    author: "Priscilla Mulenga Campbell",
+    genre: "Poetry",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1728380200-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Chocolate-Verselets-Priscilla-Mulenga-Campbell/dp/1728380200" }
+    ]
+  },
+  {
+    id: "1742845401",
+    title: "Cockabloodytoo",
+    author: "Jay Arbee",
+    genre: "Fiction",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1742845401-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/-/zh_TW/Jay-Arbee/dp/1742845401" }
+    ]
+  },
+  {
+    id: "1736763857",
+    title: "Can't See Around Corners",
+    author: "Josie Townsend",
+    genre: "Fiction",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1736763857-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Cant-Around-Corners-Josie-Townsend/dp/1736763857" }
+    ]
+  },
+  {
+    id: "0968497608",
+    title: "Broken Wings",
+    author: "Nattanya Andersen",
+    genre: "Memoir",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/0968497608-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Broken-Wings-Flight-Attendants-Journey/dp/0968497608" }
+    ]
+  },
+  {
+    id: "0968497659",
+    title: "The Post Traumatic Stress Disorder Fallacy",
+    author: "Nattanya Andersen",
+    genre: "Nonfiction",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/0968497659-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Post-Traumatic-Stress-Disorder-Fallacy/dp/0968497659" }
+    ]
+  },
+  {
+    id: "0968497675",
+    title: "Serving Evil",
+    author: "Nattanya Andersen",
+    genre: "Nonfiction",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/0968497675-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Serving-Evil-PTSD-ADHD-Fallacy/dp/0968497675" }
+    ]
+  },
+  {
+    id: "9798998658228",
+    title: "It's All Connected",
+    author: "Boots / Zakrajsek",
+    genre: "Business",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/9798998658228-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Its-All-Connected-Interactive-Leadership/dp/B0F7NZGY96" }
+    ]
+  },
+  {
+    id: "1984559974",
+    title: "Five Things I've Learned About Working in Nursing",
+    author: "Ana Lydia Peeks",
+    genre: "Nonfiction",
+    tags: [],
+    featured: false,
+    promoted: false,
+    cover: "https://covers.openlibrary.org/b/isbn/1984559974-L.jpg",
+    synopsis: "Client title showcased in our portfolio.",
+    pressQuotes: [],
+    trailer: "",
+    buyLinks: [
+      { label: "Buy on Amazon", url: "https://www.amazon.com/Things-Learned-About-Working-Nursing/dp/1984559974" }
+    ]
   }
 ];
 
@@ -265,9 +517,6 @@ const el = {
   modalLinks: byId("modalLinks"),
   modalTrailer: byId("modalTrailer"),
   modalTag: byId("modalTag"),
-  loginModal: byId("loginModal"),
-  loginForm: byId("loginForm"),
-  loginNote: byId("loginNote"),
   newsletterForm: byId("newsletterForm"),
   newsletterEmail: byId("newsletterEmail")
 };
@@ -469,27 +718,12 @@ function wire(){
   });
 
   bindModal(el.bookModal);
-  bindModal(el.loginModal);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape"){
       if (!el.bookModal.hidden) closeModal(el.bookModal);
-      if (!el.loginModal.hidden) closeModal(el.loginModal);
+      // only book modal is active now
     }
-  });
-
-  ["loginBtn", "loginBtnAlt", "loginBtnContact"].forEach(id => {
-    const btn = byId(id);
-    if (!btn) return;
-    btn.addEventListener("click", () => {
-      el.loginModal.hidden = false;
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  el.loginForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    el.loginNote.textContent = "Thanks! We sent you a secure login link.";
   });
 
   el.newsletterForm.addEventListener("submit", (event) => {
