@@ -624,6 +624,7 @@ function filteredBooks(){
 }
 
 function renderGenres(){
+  if (!el.genreSelect) return;
   const genres = getGenres();
   el.genreSelect.innerHTML = "";
   genres.forEach(genre => {
@@ -635,6 +636,7 @@ function renderGenres(){
 }
 
 function renderTags(){
+  if (!el.tagRow) return;
   el.tagRow.innerHTML = "";
   TAGS.forEach(tag => {
     const btn = document.createElement("button");
@@ -650,6 +652,7 @@ function renderTags(){
 }
 
 function renderFeatured(){
+  if (!el.featuredTrack) return;
   const featured = BOOKS.filter(b => b.featured);
   el.featuredTrack.innerHTML = "";
 
@@ -672,11 +675,14 @@ function renderFeatured(){
 }
 
 function renderBooks(shouldScroll = false){
+  if (!el.bookGrid) return;
   const list = filteredBooks();
   const total = list.length;
 
   el.bookGrid.innerHTML = "";
-  el.resultsCount.textContent = `${total} result${total === 1 ? "" : "s"}`;
+  if (el.resultsCount) {
+    el.resultsCount.textContent = `${total} result${total === 1 ? "" : "s"}`;
+  }
 
   if (!total){
     const empty = document.createElement("div");
@@ -715,45 +721,55 @@ function renderBooks(shouldScroll = false){
 }
 
 function openBookModal(book){
+  if (!el.bookModal || !el.modalCover) return;
+
   el.modalCover.src = book.cover;
   el.modalCover.alt = `${book.title} cover`;
   el.modalCover.referrerPolicy = "no-referrer";
-  el.modalTag.textContent = book.promoted ? "Promoted" : (book.tags?.[0] || "Featured");
-  el.modalTitle.textContent = book.title;
-  el.modalMeta.textContent = `${book.author} • ${book.genre} • ${book.id}`;
-  el.modalSynopsis.textContent = book.synopsis;
+  if (el.modalTag) el.modalTag.textContent = book.promoted ? "Promoted" : (book.tags?.[0] || "Featured");
+  if (el.modalTitle) el.modalTitle.textContent = book.title;
+  if (el.modalMeta) el.modalMeta.textContent = `${book.author} • ${book.genre} • ${book.id}`;
+  if (el.modalSynopsis) el.modalSynopsis.textContent = book.synopsis;
 
-  el.modalTags.innerHTML = "";
-  [book.genre, ...(book.tags || [])].forEach(tag => {
-    const span = document.createElement("span");
-    span.className = "chip";
-    span.textContent = tag;
-    el.modalTags.appendChild(span);
-  });
+  if (el.modalTags) {
+    el.modalTags.innerHTML = "";
+    [book.genre, ...(book.tags || [])].forEach(tag => {
+      const span = document.createElement("span");
+      span.className = "chip";
+      span.textContent = tag;
+      el.modalTags.appendChild(span);
+    });
+  }
 
-  el.modalQuotes.innerHTML = "";
-  (book.pressQuotes || []).forEach(q => {
-    const p = document.createElement("p");
-    p.textContent = `“${q}”`;
-    el.modalQuotes.appendChild(p);
-  });
+  if (el.modalQuotes) {
+    el.modalQuotes.innerHTML = "";
+    (book.pressQuotes || []).forEach(q => {
+      const p = document.createElement("p");
+      p.textContent = `“${q}”`;
+      el.modalQuotes.appendChild(p);
+    });
+  }
 
-  el.modalLinks.innerHTML = "";
-  (book.buyLinks || []).forEach(link => {
-    const a = document.createElement("a");
-    a.className = "btn btn--solid";
-    a.href = link.url;
-    a.target = "_blank";
-    a.rel = "noreferrer";
-    a.textContent = link.label;
-    el.modalLinks.appendChild(a);
-  });
+  if (el.modalLinks) {
+    el.modalLinks.innerHTML = "";
+    (book.buyLinks || []).forEach(link => {
+      const a = document.createElement("a");
+      a.className = "btn btn--solid";
+      a.href = link.url;
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.textContent = link.label;
+      el.modalLinks.appendChild(a);
+    });
+  }
 
-  if (book.trailer){
-    el.modalTrailer.href = book.trailer;
-    el.modalTrailer.style.display = "inline-flex";
-  } else {
-    el.modalTrailer.style.display = "none";
+  if (el.modalTrailer) {
+    if (book.trailer){
+      el.modalTrailer.href = book.trailer;
+      el.modalTrailer.style.display = "inline-flex";
+    } else {
+      el.modalTrailer.style.display = "none";
+    }
   }
 
   el.bookModal.hidden = false;
@@ -766,6 +782,7 @@ function closeModal(modal){
 }
 
 function bindModal(modal){
+  if (!modal) return;
   modal.querySelectorAll("[data-close]").forEach(btn => {
     btn.addEventListener("click", () => closeModal(modal));
   });
@@ -781,17 +798,21 @@ function wire(){
   renderFeatured();
   render();
 
-  el.searchInput.addEventListener("input", () => {
-    state.search = el.searchInput.value.trim().toLowerCase();
-    renderBooks(true);
-  });
+  if (el.searchInput) {
+    el.searchInput.addEventListener("input", () => {
+      state.search = el.searchInput.value.trim().toLowerCase();
+      renderBooks(true);
+    });
+  }
 
-  el.genreSelect.addEventListener("change", () => {
-    state.genre = el.genreSelect.value;
-    renderBooks(true);
-  });
+  if (el.genreSelect) {
+    el.genreSelect.addEventListener("change", () => {
+      state.genre = el.genreSelect.value;
+      renderBooks(true);
+    });
+  }
 
-  if (el.booksPrev && el.booksNext){
+  if (el.booksPrev && el.booksNext && el.bookGrid){
     const scrollByAmount = () => Math.max(280, Math.floor(el.bookGrid.clientWidth * 0.8));
     el.booksPrev.addEventListener("click", () => {
       el.bookGrid.scrollBy({ left: -scrollByAmount(), behavior: "smooth" });
@@ -812,26 +833,32 @@ function wire(){
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape"){
-      if (!el.bookModal.hidden) closeModal(el.bookModal);
+      if (el.bookModal && !el.bookModal.hidden) closeModal(el.bookModal);
       // only book modal is active now
     }
   });
 
-  el.newsletterForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const email = el.newsletterEmail.value.trim();
-    el.newsletterEmail.value = "";
-    if (email){
-      alert("Thanks for subscribing. Watch your inbox for updates.");
-    }
-  });
+  if (el.newsletterForm && el.newsletterEmail) {
+    el.newsletterForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const email = el.newsletterEmail.value.trim();
+      el.newsletterEmail.value = "";
+      if (email){
+        alert("Thanks for subscribing. Watch your inbox for updates.");
+      }
+    });
+  }
 
-  el.featPrev.addEventListener("click", () => {
-    el.featuredTrack.scrollBy({ left: -320, behavior: "smooth" });
-  });
-  el.featNext.addEventListener("click", () => {
-    el.featuredTrack.scrollBy({ left: 320, behavior: "smooth" });
-  });
+  if (el.featPrev && el.featuredTrack) {
+    el.featPrev.addEventListener("click", () => {
+      el.featuredTrack.scrollBy({ left: -320, behavior: "smooth" });
+    });
+  }
+  if (el.featNext && el.featuredTrack) {
+    el.featNext.addEventListener("click", () => {
+      el.featuredTrack.scrollBy({ left: 320, behavior: "smooth" });
+    });
+  }
 }
 
 wire();
