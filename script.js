@@ -574,6 +574,7 @@ const el = {
   booksPrev: byId("booksPrev"),
   booksNext: byId("booksNext"),
   booksSection: byId("books"),
+  booksStat: byId("booksStat"),
   bookModal: byId("bookModal"),
   modalCover: byId("modalCover"),
   modalTitle: byId("modalTitle"),
@@ -587,6 +588,9 @@ const el = {
   newsletterForm: byId("newsletterForm"),
   newsletterEmail: byId("newsletterEmail")
 };
+
+const REVEAL_SELECTORS = ".reveal, .card, .panel, .work-card, .t-card, .hero__card, .stat, .quote, .review-cta, .submit__panel, .newsletter, .contact__media";
+let revealObserver = null;
 
 function unique(arr){
   return [...new Set(arr)];
@@ -624,7 +628,6 @@ function filteredBooks(){
 }
 
 function renderGenres(){
-  if (!el.genreSelect) return;
   const genres = getGenres();
   el.genreSelect.innerHTML = "";
   genres.forEach(genre => {
@@ -636,7 +639,6 @@ function renderGenres(){
 }
 
 function renderTags(){
-  if (!el.tagRow) return;
   el.tagRow.innerHTML = "";
   TAGS.forEach(tag => {
     const btn = document.createElement("button");
@@ -652,7 +654,6 @@ function renderTags(){
 }
 
 function renderFeatured(){
-  if (!el.featuredTrack) return;
   const featured = BOOKS.filter(b => b.featured);
   el.featuredTrack.innerHTML = "";
 
@@ -675,20 +676,18 @@ function renderFeatured(){
 }
 
 function renderBooks(shouldScroll = false){
-  if (!el.bookGrid) return;
   const list = filteredBooks();
   const total = list.length;
 
   el.bookGrid.innerHTML = "";
-  if (el.resultsCount) {
-    el.resultsCount.textContent = `${total} result${total === 1 ? "" : "s"}`;
-  }
+  el.resultsCount.textContent = `${total} result${total === 1 ? "" : "s"}`;
 
   if (!total){
     const empty = document.createElement("div");
     empty.className = "card";
     empty.innerHTML = `<p class="muted">No matches. Try a different search or genre.</p>`;
     el.bookGrid.appendChild(empty);
+    setupReveal(el.bookGrid);
     return;
   }
 
@@ -714,6 +713,7 @@ function renderBooks(shouldScroll = false){
     el.bookGrid.appendChild(card);
   });
 
+  setupReveal(el.bookGrid);
   if (shouldScroll) {
     scrollToBooks();
     el.bookGrid.scrollTo({ left: 0, behavior: "smooth" });
@@ -721,55 +721,45 @@ function renderBooks(shouldScroll = false){
 }
 
 function openBookModal(book){
-  if (!el.bookModal || !el.modalCover) return;
-
   el.modalCover.src = book.cover;
   el.modalCover.alt = `${book.title} cover`;
   el.modalCover.referrerPolicy = "no-referrer";
-  if (el.modalTag) el.modalTag.textContent = book.promoted ? "Promoted" : (book.tags?.[0] || "Featured");
-  if (el.modalTitle) el.modalTitle.textContent = book.title;
-  if (el.modalMeta) el.modalMeta.textContent = `${book.author} • ${book.genre} • ${book.id}`;
-  if (el.modalSynopsis) el.modalSynopsis.textContent = book.synopsis;
+  el.modalTag.textContent = book.promoted ? "Promoted" : (book.tags?.[0] || "Featured");
+  el.modalTitle.textContent = book.title;
+  el.modalMeta.textContent = `${book.author} • ${book.genre} • ${book.id}`;
+  el.modalSynopsis.textContent = book.synopsis;
 
-  if (el.modalTags) {
-    el.modalTags.innerHTML = "";
-    [book.genre, ...(book.tags || [])].forEach(tag => {
-      const span = document.createElement("span");
-      span.className = "chip";
-      span.textContent = tag;
-      el.modalTags.appendChild(span);
-    });
-  }
+  el.modalTags.innerHTML = "";
+  [book.genre, ...(book.tags || [])].forEach(tag => {
+    const span = document.createElement("span");
+    span.className = "chip";
+    span.textContent = tag;
+    el.modalTags.appendChild(span);
+  });
 
-  if (el.modalQuotes) {
-    el.modalQuotes.innerHTML = "";
-    (book.pressQuotes || []).forEach(q => {
-      const p = document.createElement("p");
-      p.textContent = `“${q}”`;
-      el.modalQuotes.appendChild(p);
-    });
-  }
+  el.modalQuotes.innerHTML = "";
+  (book.pressQuotes || []).forEach(q => {
+    const p = document.createElement("p");
+    p.textContent = `“${q}”`;
+    el.modalQuotes.appendChild(p);
+  });
 
-  if (el.modalLinks) {
-    el.modalLinks.innerHTML = "";
-    (book.buyLinks || []).forEach(link => {
-      const a = document.createElement("a");
-      a.className = "btn btn--solid";
-      a.href = link.url;
-      a.target = "_blank";
-      a.rel = "noreferrer";
-      a.textContent = link.label;
-      el.modalLinks.appendChild(a);
-    });
-  }
+  el.modalLinks.innerHTML = "";
+  (book.buyLinks || []).forEach(link => {
+    const a = document.createElement("a");
+    a.className = "btn btn--solid";
+    a.href = link.url;
+    a.target = "_blank";
+    a.rel = "noreferrer";
+    a.textContent = link.label;
+    el.modalLinks.appendChild(a);
+  });
 
-  if (el.modalTrailer) {
-    if (book.trailer){
-      el.modalTrailer.href = book.trailer;
-      el.modalTrailer.style.display = "inline-flex";
-    } else {
-      el.modalTrailer.style.display = "none";
-    }
+  if (book.trailer){
+    el.modalTrailer.href = book.trailer;
+    el.modalTrailer.style.display = "inline-flex";
+  } else {
+    el.modalTrailer.style.display = "none";
   }
 
   el.bookModal.hidden = false;
@@ -782,7 +772,6 @@ function closeModal(modal){
 }
 
 function bindModal(modal){
-  if (!modal) return;
   modal.querySelectorAll("[data-close]").forEach(btn => {
     btn.addEventListener("click", () => closeModal(modal));
   });
@@ -793,26 +782,55 @@ function render(shouldScroll = false){
   renderBooks(shouldScroll);
 }
 
+function updateStats(){
+  el.booksStat.textContent = BOOKS.length.toString();
+}
+
+function initRevealObserver(){
+  if (!("IntersectionObserver" in window)) return;
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -10% 0px" });
+}
+
+function setupReveal(scope = document){
+  const targets = scope.querySelectorAll(REVEAL_SELECTORS);
+  targets.forEach((target) => {
+    if (target.dataset.revealBound) return;
+    target.classList.add("reveal");
+    target.dataset.revealBound = "true";
+    if (revealObserver){
+      revealObserver.observe(target);
+    } else {
+      target.classList.add("is-visible");
+    }
+  });
+}
+
 function wire(){
+  initRevealObserver();
   renderGenres();
   renderFeatured();
   render();
+  updateStats();
+  setupReveal();
 
-  if (el.searchInput) {
-    el.searchInput.addEventListener("input", () => {
-      state.search = el.searchInput.value.trim().toLowerCase();
-      renderBooks(true);
-    });
-  }
+  el.searchInput.addEventListener("input", () => {
+    state.search = el.searchInput.value.trim().toLowerCase();
+    renderBooks(true);
+  });
 
-  if (el.genreSelect) {
-    el.genreSelect.addEventListener("change", () => {
-      state.genre = el.genreSelect.value;
-      renderBooks(true);
-    });
-  }
+  el.genreSelect.addEventListener("change", () => {
+    state.genre = el.genreSelect.value;
+    renderBooks(true);
+  });
 
-  if (el.booksPrev && el.booksNext && el.bookGrid){
+  if (el.booksPrev && el.booksNext){
     const scrollByAmount = () => Math.max(280, Math.floor(el.bookGrid.clientWidth * 0.8));
     el.booksPrev.addEventListener("click", () => {
       el.bookGrid.scrollBy({ left: -scrollByAmount(), behavior: "smooth" });
@@ -833,32 +851,26 @@ function wire(){
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape"){
-      if (el.bookModal && !el.bookModal.hidden) closeModal(el.bookModal);
+      if (!el.bookModal.hidden) closeModal(el.bookModal);
       // only book modal is active now
     }
   });
 
-  if (el.newsletterForm && el.newsletterEmail) {
-    el.newsletterForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const email = el.newsletterEmail.value.trim();
-      el.newsletterEmail.value = "";
-      if (email){
-        alert("Thanks for subscribing. Watch your inbox for updates.");
-      }
-    });
-  }
+  el.newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = el.newsletterEmail.value.trim();
+    el.newsletterEmail.value = "";
+    if (email){
+      alert("Thanks for subscribing. Watch your inbox for updates.");
+    }
+  });
 
-  if (el.featPrev && el.featuredTrack) {
-    el.featPrev.addEventListener("click", () => {
-      el.featuredTrack.scrollBy({ left: -320, behavior: "smooth" });
-    });
-  }
-  if (el.featNext && el.featuredTrack) {
-    el.featNext.addEventListener("click", () => {
-      el.featuredTrack.scrollBy({ left: 320, behavior: "smooth" });
-    });
-  }
+  el.featPrev.addEventListener("click", () => {
+    el.featuredTrack.scrollBy({ left: -320, behavior: "smooth" });
+  });
+  el.featNext.addEventListener("click", () => {
+    el.featuredTrack.scrollBy({ left: 320, behavior: "smooth" });
+  });
 }
 
 wire();

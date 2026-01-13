@@ -17,7 +17,14 @@
   <header class="topbar">
     <div class="wrap topbar__inner">
       <a class="brand" href="#home" aria-label="Barnes & Noble Marketing">
-        <span class="brand__mark">BN</span>
+        <span class="brand__mark">
+          <img
+            src="./assets/bn-logo.png"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </span>
         <span class="brand__text">
           <span class="brand__name">Barnes & Noble Marketing</span>
           <span class="brand__tag">Book Marketing Showcase</span>
@@ -34,8 +41,7 @@
       </nav>
 
       <div class="topbar__cta">
-        <a class="btn btn--ghost" href="#newsletter">Newsletter</a>
-        <a class="btn btn--solid" href="#submit">Submit a Book</a>
+        <a class="btn btn--solid" href="mailto:bookshowcase@barnesnoblemarketing.com">Email us</a>
       </div>
     </div>
   </header>
@@ -44,20 +50,19 @@
     <section id="home" class="section hero">
       <div class="wrap hero__grid">
         <div class="hero__copy reveal">
-          <p class="eyebrow">Book marketing showcase</p>
-          <h1>Turn new releases into talked-about books.</h1>
+          <p class="eyebrow">Book marketing for authors</p>
+          <h1>Help readers notice, understand, and buy your book.</h1>
           <p class="lead">
-            We help authors and publishers launch with confidence: clean positioning, premium assets,
-            review placement, and campaign-ready marketing that earns attention and sales.
+            We help authors launch with clear messaging, strong visuals, and reviews readers trust.
+            You tell us your goals; we handle the marketing steps.
           </p>
           <div class="hero__cta">
-            <a class="btn btn--solid" href="#submit">Submit your book</a>
-            <a class="btn btn--ghost" href="#services">See packages</a>
+            <a class="btn btn--solid" href="mailto:bookshowcase@barnesnoblemarketing.com">Email us</a>
           </div>
           <div class="hero__stats">
             <div class="stat">
-              <span class="stat__k">140+</span>
-              <span class="stat__l">titles launched</span>
+              <span class="stat__k" id="booksStat">0</span>
+              <span class="stat__l">books launched</span>
             </div>
             <div class="stat">
               <span class="stat__k">4.9/5</span>
@@ -77,15 +82,14 @@
           </div>
           <h3>The Kovalenko Secret</h3>
           <p>
-            A suspense launch with international stakes, supported by a cinematic trailer and
-            press-ready assets.
+            A suspense launch supported by a short trailer, clean visuals, and assets ready for ads and social.
           </p>
           <div class="hero__card-actions">
             <button class="btn btn--ghost" type="button" data-open-book="B0C5FMV2DX">View details</button>
-            <a class="btn btn--solid" href="#submit">Submit similar</a>
+            <a class="btn btn--solid" href="#submit">Start a campaign like this</a>
           </div>
           <div class="hero__card-footer">
-            <span>Audience fit: Suspense / Thriller</span>
+            <span>Best for: Suspense / Thriller</span>
             <span>Launch window: Now</span>
           </div>
         </div>
@@ -98,7 +102,7 @@
           <div>
             <p class="eyebrow">Featured</p>
             <h2>Promoted books this season</h2>
-            <p class="muted">Highlighted campaigns and paid placements across retail and review partners.</p>
+            <p class="muted">These are the books we are actively promoting right now.</p>
           </div>
           <div class="carousel__controls">
             <button class="btn btn--ghost" type="button" id="featPrev">Prev</button>
@@ -116,8 +120,8 @@
         <div class="section__head">
           <div>
             <p class="eyebrow">Books</p>
-            <h2>Client book carousel</h2>
-            <p class="muted">Filter by genre, new, bestseller, or promoted placement.</p>
+            <h2>Client books</h2>
+            <p class="muted">Filter by genre or promo type to find similar books.</p>
           </div>
           <div class="books__actions">
             <div class="results" id="resultsCount">0 results</div>
@@ -154,38 +158,53 @@
         <div class="section__head">
           <div>
             <p class="eyebrow">Services</p>
-            <h2>Packages built for launch velocity</h2>
-            <p class="muted">Clear deliverables, premium assets, and campaign strategy in one place.</p>
+            <h2>Packages that make launching easier</h2>
+            <p class="muted">Clear deliverables, simple timelines, and the assets that help readers buy.</p>
           </div>
         </div>
 
         <div class="service-grid">
           <article class="card card--service">
             <h3>Launch Sprint</h3>
-            <p>Brand voice + launch positioning, cover polish, press kit, and retail-ready metadata.</p>
+            <p class="price">Starting at $1,200</p>
+            <p class="card__meta">Turnaround: 10-14 days</p>
+            <p>We shape your message so readers know what your book is and why it matters.</p>
             <ul>
-              <li>Positioning + category mapping</li>
-              <li>Press-ready pitch + media kit</li>
-              <li>Retail copy + keyword plan</li>
+              <li>Clear positioning + best-fit categories</li>
+              <li>Press-ready pitch + media kit (easy for reviewers)</li>
+              <li>Retail copy + keywords (helps discoverability)</li>
             </ul>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#submit" data-service="Launch Sprint">Request this package</a>
+            </div>
           </article>
           <article class="card card--service">
             <h3>Retail Boost</h3>
-            <p>Optimized listings, paid placements, and multi-channel promotions for steady sales.</p>
+            <p class="price">Starting at $1,500</p>
+            <p class="card__meta">Turnaround: 30 days</p>
+            <p>We keep your book visible with smart placements and ad-ready creative.</p>
             <ul>
-              <li>Sponsored placement strategy</li>
-              <li>Creative ad assets (static/video)</li>
-              <li>Monthly performance review</li>
+              <li>Sponsored placement plan</li>
+              <li>Ad assets (static + video)</li>
+              <li>Monthly performance check-in</li>
             </ul>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#submit" data-service="Retail Boost">Request this package</a>
+            </div>
           </article>
           <article class="card card--service">
             <h3>Author Brand Build</h3>
-            <p>Consistency across socials, website, and email, plus campaign-ready templates.</p>
+            <p class="price">Starting at $950</p>
+            <p class="card__meta">Turnaround: 2-3 weeks</p>
+            <p>We give you a clean, consistent presence so readers can follow and buy.</p>
             <ul>
-              <li>Author landing page refresh</li>
-              <li>Newsletter onboarding + flows</li>
-              <li>Creative direction kit</li>
+              <li>Author page refresh</li>
+              <li>Newsletter setup + welcome flow</li>
+              <li>Visual direction kit (so everything matches)</li>
             </ul>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#submit" data-service="Author Brand Build">Request this package</a>
+            </div>
           </article>
         </div>
       </div>
@@ -196,21 +215,21 @@
         <div class="section-label">Portfolio</div>
         <div class="section-head">
           <div>
-            <h2 class="example-title">Cinematic book trailers</h2>
-            <p class="example-sub">Short trailers built from the core idea of each book.</p>
+            <h2 class="example-title">Short book trailers</h2>
+            <p class="example-sub">Quick videos that show the heart of your story.</p>
           </div>
         </div>
 
         <p class="example-text">
-          We partner with Astra Productions, a studio we've been working closely with to create:
+          We work with Astra Productions to create:
         </p>
         <ul class="example-list">
           <li>30-60s cinematic trailer</li>
-          <li>Clean book page (cover, strongest lines, buy links)</li>
+          <li>Clean book page (cover, best lines, buy links)</li>
           <li>Cover + promo graphics bundle (cover + 3 social graphics)</li>
         </ul>
         <p class="example-text">
-          Goal: show what the book <em>feels</em> like in under a minute so readers get it fast.
+          Goal: help readers feel the story in under a minute so they understand it fast.
         </p>
 
         <div class="work-grid">
@@ -226,7 +245,7 @@
               <span class="work-pill" aria-hidden="true">Watch</span>
             </a>
             <h3 class="work-title">The Kovalenko Secret</h3>
-            <p class="work-desc">Goal: tension and intrigue. Delivered: cinematic pacing and clear hooks that spotlight the conspiracy fast.</p>
+            <p class="work-desc">Built for tension and intrigue with a clear hook in the first seconds.</p>
             <a class="work-link" href="https://youtu.be/YJNUH5L8cFc" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
           </article>
 
@@ -242,7 +261,7 @@
               <span class="work-pill" aria-hidden="true">Watch</span>
             </a>
             <h3 class="work-title">The King’s Bureau of Investigation</h3>
-            <p class="work-desc">Goal: stakes and authority. Delivered: decisive pacing, bold text beats, and a clean visual build of the mission.</p>
+            <p class="work-desc">Built to show high stakes fast with bold, easy-to-read messaging.</p>
             <a class="work-link" href="https://youtu.be/58PgTjwxWY0" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
           </article>
 
@@ -258,7 +277,7 @@
               <span class="work-pill" aria-hidden="true">Watch</span>
             </a>
             <h3 class="work-title">Positive Psychology Coaching</h3>
-            <p class="work-desc">Goal: clarity and credibility. Delivered: calm, confident pacing and clean messaging that makes the method feel usable.</p>
+            <p class="work-desc">Built for clarity and trust so new readers feel confident quickly.</p>
             <a class="work-link" href="https://youtu.be/yfPIYXm5JDw" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
           </article>
         </div>
@@ -277,12 +296,12 @@
           <div class="section-head">
             <div>
               <h2 class="example-title">Author websites</h2>
-              <p class="example-sub">One clean link an author can send everywhere.</p>
+            <p class="example-sub">One clean link an author can share anywhere.</p>
             </div>
           </div>
 
           <p class="example-text">
-            Goal: one page that introduces the author, showcases books, and points readers to purchase or contact.
+            Goal: one page that introduces the author, shows books, and guides readers to buy or contact.
           </p>
 
           <div class="work-grid">
@@ -298,7 +317,7 @@
                 <span class="work-pill" aria-hidden="true">Open</span>
               </a>
               <h3 class="work-title">Jason Mailey</h3>
-              <p class="work-desc">Goal: multi-book credibility. Delivered: clean sections + clear CTAs to reduce friction to buy.</p>
+            <p class="work-desc">Clean sections and clear CTAs so readers know what to do next.</p>
               <a class="work-link" href="https://jasonmailey.oneapp.dev/" target="_blank" rel="noopener noreferrer">Open sample author website</a>
             </article>
 
@@ -314,7 +333,7 @@
                 <span class="work-pill" aria-hidden="true">Open</span>
               </a>
               <h3 class="work-title">Eileen Apstone</h3>
-              <p class="work-desc">Goal: single-book focus. Delivered: premium spacing + direct buy flow that works on mobile.</p>
+            <p class="work-desc">Focused layout with a direct buy path that works on mobile.</p>
               <a class="work-link" href="https://eileenapstone.oneapp.dev/" target="_blank" rel="noopener noreferrer">Open sample author website</a>
             </article>
 
@@ -330,7 +349,7 @@
                 <span class="work-pill" aria-hidden="true">Open</span>
               </a>
               <h3 class="work-title">Rejection</h3>
-              <p class="work-desc">Goal: genre impact. Delivered: mood-forward layout built to make the story feel real fast.</p>
+            <p class="work-desc">Mood-forward layout that makes the story feel real fast.</p>
               <a class="work-link" href="https://rejectionastra.oneapp.dev/" target="_blank" rel="noopener noreferrer">Open sample author website</a>
             </article>
           </div>
@@ -341,7 +360,7 @@
           <div class="section-head">
             <div>
               <h2 class="example-title">Book cover &amp; promo graphics</h2>
-              <p class="example-sub">Everything included is shown in the preview below.</p>
+            <p class="example-sub">Everything included is shown in the preview below.</p>
             </div>
           </div>
 
@@ -357,7 +376,7 @@
           <div class="graphics-cta-row">
             <div class="graphics-cta-text">
               <span class="graphics-chip">From $399</span>
-              <span>Book cover + launch visuals that match your story and your audience's expectations.</span>
+              <span>Cover + launch visuals that match your story and audience expectations.</span>
             </div>
             <a class="btn btn-main" href="#contact" data-service="Book Cover &amp; Graphics ($399)">Request cover/graphics</a>
           </div>
@@ -368,7 +387,7 @@
           <div class="section-head">
             <div>
               <h2 class="example-title">What authors say</h2>
-              <p class="example-sub">Real words from authors we have worked with.</p>
+            <p class="example-sub">Real words from authors we have worked with.</p>
             </div>
           </div>
 
@@ -376,7 +395,7 @@
             <article class="t-card">
               <div class="t-stars" aria-hidden="true">★★★★★</div>
               <p class="t-quote">
-                "I actually got chills. The way you paced it made the secret feel huge without giving too much away. It feels like my story - just sharper."
+                "I actually got chills. The pacing made the secret feel huge without giving too much away. It feels like my story, just sharper."
               </p>
               <div class="t-meta">
                 <div class="t-name">Philip L. Rettew</div>
@@ -388,7 +407,7 @@
             <article class="t-card">
               <div class="t-stars" aria-hidden="true">★★★★★</div>
               <p class="t-quote">
-                "This nailed the tone. It feels official and high-stakes, and people immediately understand what the bureau is and why it matters."
+                "This nailed the tone. It feels official and high-stakes, and people understand the mission fast."
               </p>
               <div class="t-meta">
                 <div class="t-name">Geoffrey O'Farrell</div>
@@ -400,7 +419,7 @@
             <article class="t-card">
               <div class="t-stars" aria-hidden="true">★★★★★</div>
               <p class="t-quote">
-                "You made a coaching book feel warm and engaging without watering it down. The message is clear and it actually makes people want to learn more."
+                "You made a coaching book feel warm and engaging without watering it down. The message is clear and makes people want to learn more."
               </p>
               <div class="t-meta">
                 <div class="t-name">Dr. Sussane Knowles</div>
@@ -411,7 +430,7 @@
           </div>
 
           <div class="t-cta">
-            <div class="t-cta-text">Want the same result? Send your book link, genre, and what you want readers to feel.</div>
+          <div class="t-cta-text">Want the same result? Send your book link, genre, and what you want readers to feel.</div>
             <a class="btn btn-main" href="#contact">Request a concept</a>
           </div>
         </section>
@@ -425,9 +444,8 @@
             <p class="eyebrow">Book Reviews</p>
             <h2>Review services that build trust</h2>
             <p class="muted">
-              A book review is an excellent way to generate interest for your title because a lot of
-              potential readers rely on the opinion of experts to determine what new releases to consider
-              reading or purchasing.
+              Reviews help new readers feel confident. We connect you with respected reviewers so your
+              book looks credible from day one.
             </p>
           </div>
         </div>
@@ -435,43 +453,58 @@
         <div class="review-grid">
           <article class="card card--review">
             <h3>Literary Achiever Bundle</h3>
+            <p class="price">$4,799</p>
+            <p class="card__meta">Turnaround: 4-6 weeks</p>
             <p>
-              Literary awards aren't just adornments on book covers. A stamp of approval can help boost
-              credibility, create intrigue, and even widen your readership. Get reviewed by US Review of
-              Books and nominated in the Eric Hoffer awards.
+              Earn an expert review plus award consideration. This adds instant credibility and helps
+              your book stand out.
             </p>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#submit" data-service="Literary Achiever Bundle">Request this review</a>
+            </div>
           </article>
           <article class="card card--review">
             <h3>Indie Book Review Bundle</h3>
+            <p class="price">$3,399</p>
+            <p class="card__meta">Turnaround: 4-6 weeks</p>
             <p>
-              Give your book an extensive book review and a chance to be promoted in Publishers Weekly
-              with our Indie Book Review Bundle.
+              A full review plus a chance to be promoted in Publishers Weekly.
             </p>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#submit" data-service="Indie Book Review Bundle">Request this review</a>
+            </div>
           </article>
           <article class="card card--review">
             <h3>The Trifecta Review Service</h3>
+            <p class="price">$4,099</p>
+            <p class="card__meta">Turnaround: 6-8 weeks</p>
             <p>
-              Have your book critiqued by three of the industry's renowned reviewers with the Trifecta
-              Review. Receive assessments from Kirkus Indie Review, Clarion Review, and BlueInk Review.
+              Three respected reviews in one package: Kirkus Indie, Clarion, and BlueInk.
             </p>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#submit" data-service="The Trifecta Review Service">Request this review</a>
+            </div>
           </article>
           <article class="card card--review">
             <h3>Kirkus Indie Review</h3>
+            <p class="price">$549</p>
+            <p class="card__meta">Turnaround: 2-3 weeks</p>
             <p>
-              Have a seasoned book reviewer provide a detailed critique of your work, and you can use
-              positive excerpts on your marketing materials, website, and more.
+              A detailed Kirkus review you can quote on your website, ads, and book pages.
             </p>
+            <div class="card__actions">
+              <a class="btn btn--ghost" href="#submit" data-service="Kirkus Indie Review">Request this review</a>
+            </div>
           </article>
         </div>
 
         <div class="review-cta">
           <div>
-            <h3>Client review portal</h3>
-            <p class="muted">Manage submissions, invoices, and review placements in one place.</p>
+            <h3>Review support</h3>
+            <p class="muted">We help you submit, track timelines, and collect review quotes.</p>
           </div>
         <div class="review-cta__actions">
-          <a class="btn btn--ghost" href="#submit">Start a review request</a>
-          <a class="btn btn--solid" href="#books">Browse client books</a>
+          <a class="btn btn--solid" href="mailto:bookshowcase@barnesnoblemarketing.com">Email us</a>
         </div>
         </div>
       </div>
@@ -482,33 +515,33 @@
         <div class="section__head">
           <div>
             <p class="eyebrow">Results</p>
-            <h2>Proof you can show clients</h2>
-            <p class="muted">Before/after metrics and testimonials from recent campaigns.</p>
+            <h2>Results you can point to</h2>
+            <p class="muted">Real campaign outcomes from recent launches.</p>
           </div>
         </div>
 
         <div class="result-grid">
           <article class="card card--result">
             <h3>+212% preorders</h3>
-            <p>Launch Sprint elevated retail positioning and press outreach for a debut thriller.</p>
+            <p>Retail visibility improved after we clarified the hook and metadata.</p>
           </article>
           <article class="card card--result">
             <h3>4.8★ review avg</h3>
-            <p>Trifecta Review Service delivered premium review quotes and retailer trust badges.</p>
+            <p>Review quotes helped readers trust the book faster.</p>
           </article>
           <article class="card card--result">
             <h3>3x email CTR</h3>
-            <p>Author Brand Build refreshed creative and tightened messaging for sequels.</p>
+            <p>Clearer messaging lifted engagement across emails and social.</p>
           </article>
         </div>
 
         <div class="testimonials">
           <article class="quote">
-            <p>“We finally look like a major release. The press kit and review placements changed everything.”</p>
+            <p>"We finally look like a major release. The press kit and review placements changed everything."</p>
             <span>— A. Santos, Mystery Author</span>
           </article>
           <article class="quote">
-            <p>“The campaign was clean, premium, and measurable. We kept the momentum for three months.”</p>
+            <p>"The campaign was clean, premium, and measurable. We kept the momentum for three months."</p>
             <span>— L. Dela Cruz, Publisher</span>
           </article>
         </div>
@@ -516,7 +549,7 @@
         <div class="newsletter" id="newsletter">
           <div>
             <h3>Newsletter</h3>
-            <p class="muted">Get the latest launch playbooks and case studies.</p>
+            <p class="muted">Get simple launch tips and case studies.</p>
           </div>
           <form id="newsletterForm" class="newsletter__form">
             <input type="email" id="newsletterEmail" placeholder="Email address" required />
@@ -530,20 +563,19 @@
       <div class="wrap submit">
         <div>
           <p class="eyebrow">Submit a Book</p>
-          <h2>Ready for a campaign?</h2>
-          <p class="muted">Share your manuscript, launch goals, and timeline. We respond within 48 hours.</p>
+          <h2>Ready to market your book?</h2>
+          <p class="muted">Share your book link, goals, and timeline. We respond within 48 hours.</p>
           <div class="submit__actions">
-            <a class="btn btn--solid" href="https://tally.so" target="_blank" rel="noreferrer">Open submission form</a>
-            <a class="btn btn--ghost" href="mailto:hello@barnesnoblemarketing.com">Pricing inquiry</a>
+            <a class="btn btn--solid" href="mailto:bookshowcase@barnesnoblemarketing.com">Email us</a>
           </div>
         </div>
         <div class="submit__panel">
           <h3>What you will receive</h3>
           <ul>
-            <li>Launch scope + delivery timeline</li>
-            <li>Recommended review package</li>
-            <li>Estimated campaign budget</li>
-            <li>Next-step onboarding checklist</li>
+            <li>A clear scope and delivery timeline</li>
+            <li>Recommended review options (if needed)</li>
+            <li>An estimated budget range</li>
+            <li>Simple next steps to get started</li>
           </ul>
         </div>
       </div>
@@ -553,26 +585,25 @@
       <div class="wrap contact">
         <div>
           <p class="eyebrow">Contact</p>
-          <h2>Let’s build the next campaign</h2>
+          <h2>Let's market your book</h2>
           <p class="muted">Tell us about your book, audience, and launch schedule.</p>
         </div>
-        <div class="contact__aside">
-          <div class="contact__details">
-            <div>
-              <span class="contact__label">Email</span>
-              <a href="mailto:hello@barnesnoblemarketing.com">hello@barnesnoblemarketing.com</a>
-            </div>
-            <div>
-              <span class="contact__label">Next step</span>
-              <a class="btn btn--ghost" href="#submit">Submit your book</a>
-            </div>
-            <div>
-              <span class="contact__label">Location</span>
-              <span>New York, United States</span>
-            </div>
+        <div class="contact__details">
+          <div>
+            <span class="contact__label">Location</span>
+            <span>New York, NY, United States</span>
           </div>
-          <div class="contact__image">
-            <img src="./assets/bn-store.jpg" alt="Barnes &amp; Noble bookstore in New York" loading="lazy" />
+          <div class="contact__media">
+            <img
+              src="./assets/bn-store.jpg"
+              alt="Barnes & Noble storefront in New York"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div>
+            <span class="contact__label">Email</span>
+            <a href="mailto:bookshowcase@barnesnoblemarketing.com">bookshowcase@barnesnoblemarketing.com</a>
           </div>
         </div>
       </div>
@@ -583,7 +614,8 @@
     <div class="wrap footer__inner">
       <div>
         <span class="brand__name">Barnes & Noble Marketing</span>
-        <p class="muted">2026 B&N All rights reserved.</p>
+        <p class="muted">A premium book marketing showcase and review services partner.</p>
+        <a class="footer__email" href="mailto:bookshowcase@barnesnoblemarketing.com">bookshowcase@barnesnoblemarketing.com</a>
       </div>
       <div class="footer__links">
         <a href="#books">Books</a>
